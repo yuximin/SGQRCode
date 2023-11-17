@@ -83,6 +83,11 @@
     _metadataOutput.rectOfInterest = rectOfInterest;
 }
 
+- (void)setLayerRectOfInterest:(CGRect)layerRectOfInterest {
+    CGRect rectOfInterest = [self.videoPreviewLayer metadataOutputRectOfInterestForRect:layerRectOfInterest];
+    [self setRectOfInterest:rectOfInterest];
+}
+
 
 #pragma mark - - .h公开的方法
 - (void)readQRCode:(UIImage *)image completion:(void (^)(NSString *result))completion {

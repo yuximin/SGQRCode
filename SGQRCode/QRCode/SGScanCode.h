@@ -19,6 +19,11 @@
 /// 扫描区域，以屏幕右上角为坐标原点，取值范围：0～1，默认为整个屏幕
 @property (nonatomic, assign) CGRect rectOfInterest;
 
+/// 扫描区域
+///
+/// 内部通过 `AVCaptureVideoPreviewLayer` 的 `metadataOutputRectOfInterestForRect` 方法将该值对应的屏幕区域转换成 `AVCaptureMetadataOutput` 的 `rectOfInterest`，并对其进行赋值
+@property (nonatomic, assign) CGRect layerRectOfInterest;
+
 /// 扫描二维码数据代理
 @property (nonatomic, weak) id<SGScanCodeDelegate> delegate;
 
