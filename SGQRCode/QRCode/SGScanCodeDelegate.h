@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 @class SGScanCode;
 
 @protocol SGScanCodeDelegate <NSObject>
@@ -14,7 +15,7 @@
 ///
 /// @param scanCode     SGScanCode 对象
 /// @param result       扫描二维码数据
-- (void)scanCode:(SGScanCode *)scanCode result:(NSString *)result;
+- (void)scanCode:(SGScanCode *)scanCode type:(AVMetadataObjectType)type result:(NSString *)result;
 
 @end
 

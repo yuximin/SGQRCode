@@ -253,10 +253,11 @@
     if (metadataObjects != nil && metadataObjects.count > 0) {
         AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
         NSString *resultString = obj.stringValue;
+        AVMetadataObjectType type = obj.type;
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.delegate && [self.delegate respondsToSelector:@selector(scanCode:result:)]) {
-                [self.delegate scanCode:self result:resultString];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(scanCode:type:result:)]) {
+                [self.delegate scanCode:self type:type result:resultString];
             }
         });
 
